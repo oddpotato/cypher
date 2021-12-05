@@ -1,28 +1,41 @@
 <template>
+<custom-header></custom-header>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <form>
-    <input type="text" v-bind="userInput">
-    <button>Submit Your Entry</button>
+  <header></header>
+  <form @submit.prevent="submitUserInput(newUserInput)">
+    <input type="text" v-model="newUserInput">
+    <button type="submit">Submit Your Entry</button>
   </form>
-
+  <p>
+    {{ userInput }}
+  </p>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import CustomHeader from './components/styling/CustomHeader.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    CustomHeader
   },
-  data (){
+  data() {
     return {
-      userInput: ''
+      userInput: '',
+      cypherOne: '',
+
     }
   },
   methods: {
-
+    submitUserInput(newUserInput){
+      console.log(newUserInput);
+      console.log(this.userInput);
+      this.userInput = newUserInput;
+      console.log(this.userInput);
+    },
   }
 }
 </script>

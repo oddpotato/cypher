@@ -1,4 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import CustomHeader from './components/styling/CustomHeader.vue'
+
+const myApp = createApp(App)
+
+myApp.component(CustomHeader)
+myApp.mount('#app')
