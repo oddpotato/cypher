@@ -1,8 +1,9 @@
 <template>
-<custom-header></custom-header>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+<header><custom-header></custom-header></header>
+<body>
+  <div><img alt="Picture of a typewriter" src="./assets/Typewriter.png"></div>
   <input-form></input-form>
+  </body>
 <custom-footer></custom-footer>
 </template>
 
@@ -16,10 +17,12 @@ export default {
   },
 }
 </script>,
-    InputForm
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+body{
+  background-color: #f8eddf;
+}
 #app {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,6 +30,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  
 }
 
 </style>

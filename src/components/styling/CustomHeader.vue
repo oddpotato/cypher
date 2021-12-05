@@ -1,6 +1,6 @@
 <template>
 <header>
-    <h1>Hello There</h1>
+    <h1>Super Secret Special Cypher</h1>
     </header>
 </template>
 
@@ -16,6 +16,7 @@ export default({
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 header {
   width: 100%;
   height: 5rem;
@@ -23,6 +24,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Anton', sans-serif;
 }
 
 header h1 {
