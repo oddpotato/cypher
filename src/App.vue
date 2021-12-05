@@ -1,20 +1,23 @@
 <template>
 <header><custom-header></custom-header></header>
+        <div class="container">
 <body>
-  <div><img alt="Picture of a typewriter" src="./assets/Typewriter.png"></div>
-  <input-form></input-form>
+
+    <router-view />
+
   </body>
+        </div> 
 <custom-footer></custom-footer>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    // HelloWorld,
-  },
+  // components: {
+  //   StandardButton
+  //   // HelloWorld,
+  // },
 }
 </script>,
 
