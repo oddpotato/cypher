@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
@@ -9,7 +10,7 @@ import InputForm from './components/data/InputForm.vue'
 import StandardButton from './components/styling/StandardButton.vue'
 import CustomFooter from './components/styling/CustomFooter.vue'
 
-const myApp = createApp(App)
+const myApp = createApp(App).use(router)
 
 myApp.component('standard-button', StandardButton)
 myApp.component('custom-header', CustomHeader)
