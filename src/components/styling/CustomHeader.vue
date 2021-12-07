@@ -2,6 +2,7 @@
 <header>
     <h1>Super Secret Special Cypher</h1>
     </header>
+    <log-in-log-out />
 </template>
 
 <script>
