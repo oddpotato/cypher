@@ -1,6 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap"
+
 import CustomHeader from './components/styling/CustomHeader.vue'
 import InputForm from './components/data/InputForm.vue'
 import StandardButton from './components/styling/StandardButton.vue'
