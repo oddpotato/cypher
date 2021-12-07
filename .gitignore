@@ -2,6 +2,8 @@
 node_modules
 /dist
 auth_config.json
+./src/main/resources/application.properties
+./src/otka.json
 
 # local env files
 .env.local
