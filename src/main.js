@@ -5,6 +5,9 @@ import router from './router'
 import VueAuth0Plugin from 'vue-auth0-plugin';
 import { domain, clientId } from '../auth_config.json';
 
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap"
+
 import CustomHeader from './components/styling/CustomHeader.vue'
 import InputForm from './components/data/InputForm.vue'
 import StandardButton from './components/styling/StandardButton.vue'
