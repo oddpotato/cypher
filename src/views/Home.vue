@@ -1,5 +1,5 @@
 <template>
-<standard-button class="flat"><router-link to="/about">Click Here To Know More</router-link>
+<standard-button class="flat">
 </standard-button>
       <div><img alt="Picture of a typewriter" src="../assets/Typewriter.png"></div>
   <input-form></input-form>

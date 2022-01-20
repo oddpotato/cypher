@@ -2,9 +2,7 @@
 <header><custom-header></custom-header></header>
         <div class="container">
 <body>
-
-    <router-view />
-
+<router-view />
   </body>
         </div> 
 <custom-footer></custom-footer>
