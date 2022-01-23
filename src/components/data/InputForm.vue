@@ -6,10 +6,15 @@
       <form @submit.prevent="submitForm()">
       <textarea label="OG Text" v-model="enteredData"></textarea>
       <!-- <button @click="encode(enteredData)">Encode</button> -->
-      <button @click="encode2(enteredData)">Encode2</button>
+      <button @click="encode2(enteredData, this.inputType='originalInput')">Encode2</button>
       <p>This button turns your original text into the relevant indices if you assume A = 1</p>
     </form>
     <!-- {{enteredData}} -->
+  </div>
+  <div class="container">
+    <p v-if="this.$store.state.inputTextFinalArray.length > 0">
+      {{ this.$store.state.inputTextFinalArray }}
+    </p>
   </div>
   <div class="container">
     {{ this.$store.state.correct_indices }}
@@ -22,14 +27,16 @@ export default {
   data() {
     return { 
     enteredData: '',
+    inputType: ''
     };
   },
   methods: {
     submitForm() {
       console.log(this.enteredData)
     },
-    encode2(text){
-      this.$store.dispatch('encode', text)
+    encode2(text, inputType){
+      const payload = {text: text, inputType: inputType}
+      this.$store.dispatch('encode', payload)
     }
   },
 };
