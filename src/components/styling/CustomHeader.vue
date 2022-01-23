@@ -1,7 +1,7 @@
 <template>
 <header>
   <!-- <router-link to="/about">About Button</router-link> -->
-    <h1>Super Secret Special Cypher</h1>
+    <h1>Super Secret Special Vigenère cipher</h1>
     </header>
 </template>
 

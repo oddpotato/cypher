@@ -1,32 +1,30 @@
 <template>
   <div class="container">
-    <div class="container">
-    {{ this.$store.state.the_alphabet_array }}
-    </div>
+      <p>The following assume that A is equal to 0 in the cypher index.</p>
+      <div class="container">
       <form @submit.prevent="submitForm()">
       <textarea label="originalInput" v-model="enteredData"></textarea>
-      <!-- <button @click="encode(enteredData)">Encode</button> -->
-      <button @click="encode(enteredData, this.inputType='originalInput')">Encode Input Text</button>
-      <p>This button turns your original text into the relevant indices if you assume A = 0</p>
+      <!-- <button @click="encode(enteredData)">Encode</button> --><p>
+      <button @click="encode(enteredData, this.inputType='originalInput')">Encode Input Text</button></p>
+      <p>This is your input text</p>
+      <p v-if="this.$store.state.inputTextFinalArray.length > 0">
+      {{ this.$store.state.inputTextFinalArray }}
+      </p>
     </form>
+    </div>
+  <div class="container">
     <form @submit.prevent="submitForm2()">
       <textarea label="firstKey" v-model="firstKey"></textarea>
-      <button @click="encode(firstKey, this.inputType='firstKey')">Encode Your First Key</button>
+      <p><button @click="encode(firstKey, this.inputType='firstKey')">Encode Your First Key</button></p>
     </form>
-    <!-- {{enteredData}} -->
-  </div>
-  <div class="container">
-    <h1>This is your input text</h1>
-    <p v-if="this.$store.state.inputTextFinalArray.length > 0">
-      {{ this.$store.state.inputTextFinalArray }}
-    </p>
-  </div>
-  <div class="container">
-    <h1>This is your first key</h1>
+    <p>This is your first key</p>
     <p v-if="this.$store.state.firstKeyFinalArray.length > 0">
       {{ this.$store.state.firstKeyFinalArray }}
     </p>
+    </div>
   </div>
+
+
   <div class="container">
     {{ this.$store.state.correct_indices }}
   </div>
