@@ -1,12 +1,11 @@
 <template>
   <div class="container">
       <form @submit.prevent="submitForm()">
-      <textarea v-model="enteredData"></textarea>
-      <!-- <button @click="updateEnteredData" "encode(enteredData)">Submit</button> -->
+      <textarea label="OG Text" v-model="enteredData"></textarea>
       <button @click="encode(enteredData)">Encode</button>
       <p>This button turns your original text into the relevant indices if you assume A = 1</p>
     </form>
-    {{enteredData}}
+    <!-- {{enteredData}} -->
   </div>
   <div class="container">
     {{ correct_indices }}

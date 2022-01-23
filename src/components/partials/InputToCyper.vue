@@ -1,5 +1,5 @@
 <template>
-    
+    <h2>I'm just here for the validation</h2>
 </template>
 
 <script>

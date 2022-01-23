@@ -9,8 +9,9 @@ import CustomHeader from './components/styling/CustomHeader.vue'
 import InputForm from './components/data/InputForm.vue'
 import StandardButton from './components/styling/StandardButton.vue'
 import CustomFooter from './components/styling/CustomFooter.vue'
+import store from './store'
 
-const myApp = createApp(App).use(router)
+const myApp = createApp(App).use(store).use(router)
 
 myApp.component('standard-button', StandardButton)
 myApp.component('custom-header', CustomHeader)
