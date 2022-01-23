@@ -9,9 +9,11 @@ export default createStore({
         regex: /[^A-Za-z]/g,
         final_array: [],
         inputTextFinalArray: [],
+        firstKeyFinalArray: []
     },
     actions: {
         encode(context, payload) {
+            console.log('The action is running')
             context.commit('encode', payload)
         }
     },
@@ -29,11 +31,14 @@ export default createStore({
                     // If an element in the alphabet array matches and element in the new array
                     // it appends the element index onto the appropriate array
                     if (element === item) {
-                        console.log("It's a match!");
-                        if (inputType == 'originalInput') {
+                        if (inputType === 'originalInput') {
                             state.inputTextFinalArray.push(state.the_alphabet_array.indexOf(item));
                             console.log(`${element} is at ${state.the_alphabet_array.indexOf(item)}`)
+                        } else if (inputType === 'firstKey') {
+                            state.firstKeyFinalArray.push(state.the_alphabet_array.indexOf(item));
+                            console.log(`${element} is at ${state.the_alphabet_array.indexOf(item)}`)
                         } else {
+                            console.log("I don't know the " + inputType)
                             state.final_array.push(state.the_alphabet_array.indexOf(item));
                         }
                     }
@@ -41,7 +46,6 @@ export default createStore({
             }
             state.correct_indices = state.final_array.map(x => x + 1).join(" ")
             console.log(state.correct_indices)
-
         }
     },
     modules: {}

@@ -4,16 +4,27 @@
     {{ this.$store.state.the_alphabet_array }}
     </div>
       <form @submit.prevent="submitForm()">
-      <textarea label="OG Text" v-model="enteredData"></textarea>
+      <textarea label="originalInput" v-model="enteredData"></textarea>
       <!-- <button @click="encode(enteredData)">Encode</button> -->
-      <button @click="encode2(enteredData, this.inputType='originalInput')">Encode2</button>
-      <p>This button turns your original text into the relevant indices if you assume A = 1</p>
+      <button @click="encode(enteredData, this.inputType='originalInput')">Encode Input Text</button>
+      <p>This button turns your original text into the relevant indices if you assume A = 0</p>
+    </form>
+    <form @submit.prevent="submitForm2()">
+      <textarea label="firstKey" v-model="firstKey"></textarea>
+      <button @click="encode(firstKey, this.inputType='firstKey')">Encode Your First Key</button>
     </form>
     <!-- {{enteredData}} -->
   </div>
   <div class="container">
+    <h1>This is your input text</h1>
     <p v-if="this.$store.state.inputTextFinalArray.length > 0">
       {{ this.$store.state.inputTextFinalArray }}
+    </p>
+  </div>
+  <div class="container">
+    <h1>This is your first key</h1>
+    <p v-if="this.$store.state.firstKeyFinalArray.length > 0">
+      {{ this.$store.state.firstKeyFinalArray }}
     </p>
   </div>
   <div class="container">
@@ -27,14 +38,19 @@ export default {
   data() {
     return { 
     enteredData: '',
-    inputType: ''
+    inputType: '',
+    firstKey: ''
     };
   },
   methods: {
     submitForm() {
       console.log(this.enteredData)
     },
-    encode2(text, inputType){
+    submitForm2() {
+      console.log(this.firstKey)
+    },
+    encode(text, inputType){
+      console.log('Encode is running')
       const payload = {text: text, inputType: inputType}
       this.$store.dispatch('encode', payload)
     }
