@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="container">
+    {{ this.$store.state.the_alphabet_array }}
+    </div>
       <form @submit.prevent="submitForm()">
       <textarea label="OG Text" v-model="enteredData"></textarea>
       <button @click="encode(enteredData)">Encode</button>
@@ -13,12 +16,14 @@
 </template>  
 
 <script>
+
+// import { mapGetters } from 'vuex'
+
 export default {
   data() {
     return { 
     enteredData: '',
     formattedData: '',
-    the_alphabet_array: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
     final_array: [],
     sanitized_text_array: [],
     correct_indices: ''
@@ -37,12 +42,12 @@ export default {
     console.log(this.sanitized_text_array);
     for (const element of this.sanitized_text_array){
       console.log("Now it's going through some stuff1");
-    for (const item of this.the_alphabet_array){
+    for (const item of this.$store.state.the_alphabet_array){
       console.log("Now it's going through some stuff2");
       if(element === item){
         console.log("It's a match!");
-      this.final_array.push(this.the_alphabet_array.indexOf(item));
-      console.log(`${element} is at ${this.the_alphabet_array.indexOf(item)}`)}    
+      this.final_array.push(this.$store.state.the_alphabet_array.indexOf(item));
+      console.log(`${element} is at ${this.$store.state.the_alphabet_array.indexOf(item)}`)}    
     }}
     this.correct_indices = this.final_array.map(x => x + 1).join(" ")
     console.log(this.correct_indices)
