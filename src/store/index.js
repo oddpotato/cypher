@@ -15,6 +15,9 @@ export default createStore({
         encode(context, payload) {
             console.log('The action is running')
             context.commit('encode', payload)
+        },
+        matchLengths(context) {
+            context.commit('matchLengths')
         }
     },
     mutations: {
@@ -46,6 +49,15 @@ export default createStore({
             }
             state.correct_indices = state.final_array.map(x => x + 1).join(" ")
             console.log(state.correct_indices)
+        },
+        matchLengths(state) {
+            do {
+                let growToMatch = state.firstKeyFinalArray.concat(state.firstKeyFinalArray);
+                state.firstKeyFinalArray = growToMatch
+            } while (state.inputTextFinalArray.length > state.firstKeyFinalArray.length);
+            if (state.firstKeyFinalArray.length > state.inputTextFinalArray.length) {
+                state.firstKeyFinalArray = state.firstKeyFinalArray.slice((state.firstKeyFinalArray.length - state.inputTextFinalArray.length))
+            }
         }
     },
     modules: {}

@@ -22,6 +22,9 @@
       {{ this.$store.state.firstKeyFinalArray }}
     </p>
     </div>
+    <div class="container">
+      <p><button @click="matchLengths()">Make them match</button></p>
+    </div>
   </div>
 
 
@@ -51,6 +54,9 @@ export default {
       console.log('Encode is running')
       const payload = {text: text, inputType: inputType}
       this.$store.dispatch('encode', payload)
+    },
+    matchLengths(){
+      this.$store.dispatch('matchLengths')
     }
   },
 };
