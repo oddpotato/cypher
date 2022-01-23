@@ -29,7 +29,7 @@ export default {
       console.log(this.enteredData)
     },
     encode2(text){
-      this.$store.commit('encode', text)
+      this.$store.dispatch('encode', text)
     }
   },
 };

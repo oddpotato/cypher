@@ -33,7 +33,9 @@ export default createStore({
         }
     },
     actions: {
-
+        encode(context, text) {
+            context.commit('encode', text)
+        }
     },
     modules: {}
 })
